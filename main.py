@@ -1,6 +1,7 @@
 from pathlib import Path
 import numpy as np
 from isaacsim import SimulationApp
+import matplotlib.pyplot as plt
 
 simulation_app = SimulationApp({"headless": False})
 
@@ -96,6 +97,12 @@ print(new_k)
 
 i = 0
 while True:
-    robot.set_joint_positions(np.deg2rad(np.array([np.sin(i/100)*90, 10, 10, 10, 10, np.sin(i/100)*45])))
+    robot.set_joint_positions(np.deg2rad(np.array([np.sin(i/200)*90, 10, 10, 10, 10, np.sin(i/200)*45])))
+
     world.step(render=True)
+
+    frame = camera.get_current_frame()
+    rgb = frame["rgba"].astype(np.uint8)[..., :3]#[..., ::-1]
+    plt.imsave("rgb.png", rgb)
+
     i += 1
