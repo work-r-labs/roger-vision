@@ -7,3 +7,8 @@ git clone --recurse-submodules https://github.com/work-r-labs/roger-vision.git
 cd roger-camera
 ~/isaacsim/python.sh main.py
 ```
+
+## Video Tutorial
+Link: https://youtu.be/5WIfJkKEYWk
+
+[![Tutorial Video Thumbnail](docs/EOAT_Camera_Setup.png)](https://youtu.be/5WIfJkKEYWk)
